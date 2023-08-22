@@ -43,4 +43,8 @@ public class Vendedor extends Usuario{
 		mapperVendedor.mapperModificarVenta(idVenta);
 		
 	}
+	
+	public void eliminarVenta(int idVenta) {
+		mapperVendedor.mapperEliminarVenta(idVenta);
+	}
 }
