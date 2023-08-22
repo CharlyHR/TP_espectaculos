@@ -56,4 +56,28 @@ public class MapperAdministradorEspectaculo {
 	    }
 	}
 	
+	public void mapperModificarEspectaculo(int idEspecatulo) {
+		
+		String nuevo_nombre = "Show de malabares";
+		String nueva_fecha = "66 de noviembre";
+		int nuevo_precio = 10;
+		String nueva_foto = "http://nueva foto";
+		int nueva_cap_total = 3000;
+		int nueva_cap_restante = 3000;
+		
+		try {
+			Connection con = null;
+			con = Conexion.getConection();
+			Statement s = con.createStatement();
+			String sql = "UPDATE espectaculo set nombre = '" + nuevo_nombre + "', fecha = '" + nueva_fecha + "',precio = '" + nuevo_precio + "', foto = '" + nueva_foto + "', capacidad_total = '" + nueva_cap_total + "', capacidad_restante = '" + nueva_cap_restante +"' WHERE id_espectaculo = '" + idEspecatulo + "'";
+			s.executeUpdate(sql);
+			con.close(); 
+		}catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		
+		//place holder
+		System.out.println("Se ha modificado un espectaculo:\nID: " + idEspecatulo);
+	}
+	
 }
