@@ -73,6 +73,29 @@ public class MapperVendedor {
 	        return 0;
 	    }
 	}
+	
+	public void mapperModificarVenta(int idVenta) {
+		// Valores hardcodeados para probar, despues seran ingresados desde la UI
+		int nuevo_dni_v = 11111111;
+		int nueva_id_espectaculo = 1054;
+		String nueva_ubicacion = "subsuelo";
+		int nueva_cant_venta = 32;
+		String fecha = "5/12/1985";
+				
+		try {
+			Connection con = null;
+			con = Conexion.getConection();
+			Statement s = con.createStatement();
+			String sql = "UPDATE venta set dni_vendedor = '" + nuevo_dni_v + "', id_espectaculo = '" + nueva_id_espectaculo + "',ubicacion = '" + nueva_ubicacion + "', cantidad_venta = '" + nueva_cant_venta + "', fecha_venta = '" + fecha + "' WHERE id_venta = '" + idVenta + "'";
+			s.executeUpdate(sql);
+			con.close(); 
+		}catch (Exception e1) {
+			e1.printStackTrace();
+		}
+				
+		//place holder 
+		System.out.println("Se ha modificado una venta:\nID: " + idVenta);
+	}
 }
 
 
