@@ -23,7 +23,7 @@ public class Usuario{
 		this.password = password;
 	}
 
-	// getters
+	// getters y setters
 	
 	public String getNombre() {
 		return nombre;
@@ -45,7 +45,6 @@ public class Usuario{
 		return dni;
 	}
 	
-	// setters
 	
 	public void setDni(int dni) {
 		this.dni = dni;
