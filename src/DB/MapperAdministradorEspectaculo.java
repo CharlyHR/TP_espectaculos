@@ -56,7 +56,7 @@ public class MapperAdministradorEspectaculo {
 	    }
 	}
 	
-	public void mapperModificarEspectaculo(int idEspecatulo) {
+	public void mapperModificarEspectaculo(int idEspectaculo) {
 		
 		String nuevo_nombre = "Show de malabares";
 		String nueva_fecha = "66 de noviembre";
@@ -69,7 +69,7 @@ public class MapperAdministradorEspectaculo {
 			Connection con = null;
 			con = Conexion.getConection();
 			Statement s = con.createStatement();
-			String sql = "UPDATE espectaculo set nombre = '" + nuevo_nombre + "', fecha = '" + nueva_fecha + "',precio = '" + nuevo_precio + "', foto = '" + nueva_foto + "', capacidad_total = '" + nueva_cap_total + "', capacidad_restante = '" + nueva_cap_restante +"' WHERE id_espectaculo = '" + idEspecatulo + "'";
+			String sql = "UPDATE espectaculo set nombre = '" + nuevo_nombre + "', fecha = '" + nueva_fecha + "',precio = '" + nuevo_precio + "', foto = '" + nueva_foto + "', capacidad_total = '" + nueva_cap_total + "', capacidad_restante = '" + nueva_cap_restante +"' WHERE id_espectaculo = '" + idEspectaculo + "'";
 			s.executeUpdate(sql);
 			con.close(); 
 		}catch (Exception e1) {
@@ -77,7 +77,24 @@ public class MapperAdministradorEspectaculo {
 		}
 		
 		//place holder
-		System.out.println("Se ha modificado un espectaculo:\nID: " + idEspecatulo);
+		System.out.println("Se ha modificado un espectaculo:\nID: " + idEspectaculo);
+	}
+	
+	public void mapperEliminarEspectaculo(int idEspectaculo) {
+		
+		try {
+			Connection con = null;
+			con = Conexion.getConection();
+			Statement s = con.createStatement();
+			String sql = "DELETE FROM espectaculo WHERE id_espectaculo = '" + idEspectaculo + "'";
+			s.executeUpdate(sql);
+			con.close(); 
+		}catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		
+		//place holder
+		System.out.println("Se ha eliminado un espectaculo:\nID: " + idEspectaculo);
 	}
 	
 }
