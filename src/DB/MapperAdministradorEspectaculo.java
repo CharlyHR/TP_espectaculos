@@ -29,28 +29,7 @@ public class MapperAdministradorEspectaculo {
 		
 	}
 	
-	/*
-	public int mapperObtenerCapacidad(int idEspectaculo) {
-		// SELECT * FROM Customers
-		// WHERE Country='Mexico';
-		try {
-			Connection con = null;
-			con = Conexion.getConection();
-			Statement s = con.createStatement();
-            String sql = "SELECT capacidad_restante FROM espectaculo WHERE id_espectaculo = '" + idEspectaculo + "'";
-            //s.executeUpdate(sql);
-            ResultSet rs = s.executeQuery(sql);
-            System.out.println("decuelve: " + rs.getInt(1));
-			//int cap = rs.getInt(1);
-			con.close(); 
-			System.out.println("Desde el mapperObtenerCapacidad se trajo la siguiente capacidad de la BD:" + rs.getInt(1));
-			return rs.getInt(1);
-			
-		}catch(Exception e1) {
-			e1.printStackTrace();
-			return 0;
-		}
-	}*/
+	
 	public int mapperObtenerCapacidad(int idEspectaculo) {
 	    try {
 	        Connection con = null;
