@@ -26,4 +26,9 @@ public class Administrador extends Usuario{
 		
 		mapperAdmin.mapperModificarEspectaculo(idEspectaculo);
 	}
+	
+	public void eliminarEspectaculo(int idEspectaculo) {
+		
+		mapperAdmin.mapperEliminarEspectaculo(idEspectaculo);
+	}
 }
