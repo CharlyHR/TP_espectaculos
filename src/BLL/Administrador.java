@@ -1,6 +1,7 @@
 package BLL;
 
 import DB.MapperAdministradorEspectaculo;
+import DB.MapperAdministradorUsuario;
 
 public class Administrador extends Usuario{
 
@@ -30,5 +31,12 @@ public class Administrador extends Usuario{
 	public void eliminarEspectaculo(int idEspectaculo) {
 		
 		mapperAdmin.mapperEliminarEspectaculo(idEspectaculo);
+	}
+	
+	
+	// de mapperAdministradorUsuario
+	MapperAdministradorUsuario mapperAdmUsr = new MapperAdministradorUsuario(); // ESTA BIEN ESTO? tener dos mappers admin?
+	public void crearUsuario(int dni, String nombre, String apellido, String email, String nombreUsuario, String password) {
+		mapperAdmUsr.mapperCrearUsuario(dni, nombre, apellido, email, nombreUsuario, password);
 	}
 }
