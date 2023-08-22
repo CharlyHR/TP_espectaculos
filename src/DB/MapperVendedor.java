@@ -96,6 +96,25 @@ public class MapperVendedor {
 		//place holder 
 		System.out.println("Se ha modificado una venta:\nID: " + idVenta);
 	}
+	
+	public void mapperEliminarVenta(int idVenta) {
+		
+		try {
+			Connection con = null;
+			con = Conexion.getConection();
+			Statement s = con.createStatement();
+			String sql = "DELETE FROM venta WHERE id_venta = '" + idVenta + "'";
+			s.executeUpdate(sql);
+			con.close(); 
+		}catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		
+		//place holder
+		System.out.println("Se ha eliminado una Venta:\nID: " + idVenta);
+	}
+		
+	
 }
 
 
