@@ -32,12 +32,15 @@ public class Vendedor extends Usuario{
 	
 	// recibe el id_espectaculo y una cantidad de entradas a vender y devuelve true si hay espacio libre y false si no lo hay 
 	// vamos a tener que agregar un campo en Espectaculos para llevar la cuenta de cuanto espacio libre queda.
-	public void verificarCapacidad(String id_espectaculo, int entradas) {
-		
+	public int verificarCapacidad(int id_espectaculo, int entradas) {
 		int capacidad = mapperVendedor.mapperObtenerCapacidad(id_espectaculo);
-		
+		return capacidad;
 		
 	}
 	
 
+	public void modificarVenta(int idVenta) {
+		mapperVendedor.mapperModificarVenta(idVenta);
+		
+	}
 }
