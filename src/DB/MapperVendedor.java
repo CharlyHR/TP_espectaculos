@@ -48,10 +48,30 @@ public class MapperVendedor {
 	
 	
 	// mapperObtenerCapacidad: recibe un id_espectaculo y recupera de la BD la capacidad del estadio dado
-	public int mapperObtenerCapacidad(String id_espectaculo) {
-		//place-holder, debe ser reemplazado con la capacidad del estadio
-		int cap = 10000; 
-		return cap;
+	public int mapperObtenerCapacidad(int idEspectaculo) {
+	    try {
+	        Connection con = null;
+	        con = Conexion.getConection();
+	        Statement s = con.createStatement();
+	        String sql = "SELECT capacidad_restante FROM espectaculo WHERE id_espectaculo = '" + idEspectaculo + "'";
+	        ResultSet rs = s.executeQuery(sql);
+
+	        // Verificar si hay al menos una fila en el resultado
+	        if (rs.next()) {
+	            int capacidad = rs.getInt("capacidad_restante");
+	            System.out.println("Desde el mapperObtenerCapacidad se trajo la siguiente capacidad de la BD:" + capacidad);
+	            con.close();
+	            return capacidad;
+	        } else {
+	            // No se encontraron filas que coincidan con el ID proporcionado
+	            con.close();
+	            return 0;
+	        }
+
+	    } catch (Exception e1) {
+	        e1.printStackTrace();
+	        return 0;
+	    }
 	}
 }
 
