@@ -1,6 +1,5 @@
 package DB;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -10,8 +9,6 @@ public class MapperAdministradorEspectaculo {
 		
 		try {
 			Connection con = null;
-			PreparedStatement ps;
-			ResultSet res;
 			con = Conexion.getConection();
 			
 			Statement s = con.createStatement();
