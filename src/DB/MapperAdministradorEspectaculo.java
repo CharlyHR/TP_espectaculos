@@ -58,6 +58,7 @@ public class MapperAdministradorEspectaculo {
 	
 	public void mapperModificarEspectaculo(int idEspectaculo) {
 		
+		// Valores hardcodeados para probar, despues seran ingresados desde la UI
 		String nuevo_nombre = "Show de malabares";
 		String nueva_fecha = "66 de noviembre";
 		int nuevo_precio = 10;
