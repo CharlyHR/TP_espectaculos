@@ -66,5 +66,6 @@ public class MapperAdministradorUsuario {
 			
 			//place holder
 			System.out.println("Se ha modificado el usuario: \n DNI: " + dniUsuario);
-		}
+	}
+	
 }
