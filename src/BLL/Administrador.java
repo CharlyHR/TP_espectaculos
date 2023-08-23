@@ -39,4 +39,12 @@ public class Administrador extends Usuario{
 	public void crearUsuario(int dni, String nombre, String apellido, String email, String nombreUsuario, String password) {
 		mapperAdmUsr.mapperCrearUsuario(dni, nombre, apellido, email, nombreUsuario, password);
 	}
+	
+	public void eliminarUsuario(int dniUsuario) {
+		mapperAdmUsr.mapperEliminarUsuario(dniUsuario);
+	}
+	
+	public void modificarUsuario(int dniUsuario) {
+		mapperAdmUsr.mapperModificarUsuario(dniUsuario);
+	}
 }
