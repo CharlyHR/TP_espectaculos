@@ -4,8 +4,8 @@ import DB.MapperVendedor;
 
 public class Vendedor extends Usuario{
 
-	public Vendedor(String nombre, String apellido, int dni, String email, String nombreUsuario, String password) {
-		super(nombre, apellido, dni, email, nombreUsuario, password);
+	public Vendedor(String nombre, String apellido, int dni, String email, String nombreUsuario, String password, int tipo) {
+		super(nombre, apellido, dni, email, nombreUsuario, password, tipo);
 		// TODO Auto-generated constructor stub
 	}
 
