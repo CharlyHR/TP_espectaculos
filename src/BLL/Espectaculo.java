@@ -3,6 +3,7 @@ package BLL;
 public class Espectaculo {
 	
 	private int id_espectaculo;
+	private String nombre;
 	private String fecha;
 	private int capacidadTotal;
 	private int capacidadRestante;
@@ -11,6 +12,22 @@ public class Espectaculo {
 	private String fotoEspectaculo;
 	
 	
+	
+	public Espectaculo(int id_espectaculo, String nombre, String fecha, int precio, String fotoEspectaculo, int capacidadTotal, int capacidadRestante) {
+		super();
+		this.id_espectaculo = id_espectaculo;
+		this.nombre = nombre;
+		this.fecha = fecha;
+		this.precio = precio;
+		this.fotoEspectaculo = fotoEspectaculo;
+		this.capacidadTotal = capacidadTotal;
+		this.capacidadRestante = capacidadRestante;
+		
+		//this.ubicacion = ubicacion;
+		
+	}
+
+/*
 	// constructor
 	public Espectaculo(int id_espectaculo, String fecha, int capacidadTotal, int capacidadRestante, int precio,
 			String ubicacion, String fotoEspectaculo) {
@@ -22,10 +39,23 @@ public class Espectaculo {
 		this.precio = precio;
 		this.ubicacion = ubicacion;
 		this.fotoEspectaculo = fotoEspectaculo;
+	}*/
+
+
+	public Espectaculo() {
+		// TODO Auto-generated constructor stub
 	}
 
 
 	// getters y setters
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	
 	public int getId_espectaculo() {
 		return id_espectaculo;
