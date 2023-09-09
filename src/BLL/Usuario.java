@@ -8,12 +8,21 @@ public class Usuario{
 	private String email;
 	private String nombreUsuario;
 	private String password;
+	private int tipo;
 	
 	
 	
 	// constructor
 	
-	public Usuario(String nombre, String apellido, int dni, String email, String nombreUsuario, String password) {
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public Usuario(String nombre, String apellido, int dni, String email, String nombreUsuario, String password, int tipo) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -21,14 +30,19 @@ public class Usuario{
 		this.email = email;
 		this.nombreUsuario = nombreUsuario;
 		this.password = password;
+		this.tipo = tipo;
 	}
-
+	
 	// getters y setters
 	
 	public String getNombre() {
 		return nombre;
 	}
 	
+	public Usuario() {
+		super();
+	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -74,4 +88,14 @@ public class Usuario{
 		this.password = password;
 	}
 		
+	
+	public String toString() {
+        // Devuelve una representación en cadena de este objeto
+        return "DNI: " + this.getDni() +
+               ", Nombre: " + this.getNombre() +
+               ", Apellido: " + this.getApellido() +
+               ", Email: " + this.getEmail() +
+               ", Nombre de Usuario: " + this.getNombreUsuario() +
+               ", Tipo: " + this.getTipo();
+    }
 }
