@@ -13,7 +13,7 @@ public class Administrador extends Usuario{
 	MapperAdministradorEspectaculo mapperAdmin = new MapperAdministradorEspectaculo();
 	public void crearEspectaculo(int id_espectaculo, String nombre, String fecha, int precio, String foto, int capacidadTotal, int capacidadRestante) {
 		
-		mapperAdmin.mapperCrearEspectaculo(id_espectaculo, nombre, fecha, precio, foto, capacidadTotal, capacidadRestante);
+		mapperAdmin.mapperCrearEspectaculo(id_espectaculo, nombre, fecha, foto);
 		
 	}
 	
@@ -23,9 +23,9 @@ public class Administrador extends Usuario{
 	}
 
 
-	public void modificarEspectaculo(int idEspectaculo, String nombre, String fecha, int precio, String foto, int capacidadTotal, int capacidadRestante) {
+	public void modificarEspectaculo(int idEspectaculo, String nombre, String fecha, String foto) {
 		
-		mapperAdmin.mapperModificarEspectaculo(idEspectaculo,nombre, fecha, precio, foto, capacidadTotal, capacidadRestante);
+		mapperAdmin.mapperModificarEspectaculo(idEspectaculo,nombre, fecha, foto);
 	}
 	
 	public void eliminarEspectaculo(int idEspectaculo) {

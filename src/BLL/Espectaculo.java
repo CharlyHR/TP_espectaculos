@@ -5,23 +5,23 @@ public class Espectaculo {
 	private int id_espectaculo;
 	private String nombre;
 	private String fecha;
-	private int capacidadTotal;
-	private int capacidadRestante;
-	private int precio;
-	private String ubicacion;
+	//private int capacidadTotal;
+	//private int capacidadRestante;
+	//private int precio;
+	//private String ubicacion;
 	private String fotoEspectaculo;
 	
 	
 	
-	public Espectaculo(int id_espectaculo, String nombre, String fecha, int precio, String fotoEspectaculo, int capacidadTotal, int capacidadRestante) {
+	public Espectaculo(int id_espectaculo, String nombre, String fecha,String fotoEspectaculo) {
 		super();
 		this.id_espectaculo = id_espectaculo;
 		this.nombre = nombre;
 		this.fecha = fecha;
-		this.precio = precio;
+		//this.precio = precio;
 		this.fotoEspectaculo = fotoEspectaculo;
-		this.capacidadTotal = capacidadTotal;
-		this.capacidadRestante = capacidadRestante;
+		//this.capacidadTotal = capacidadTotal;
+		//this.capacidadRestante = capacidadRestante;
 		
 		//this.ubicacion = ubicacion;
 		
@@ -76,7 +76,7 @@ public class Espectaculo {
 		this.fecha = fecha;
 	}
 
-
+	/*
 	public int getCapacidadTotal() {
 		return capacidadTotal;
 	}
@@ -115,7 +115,7 @@ public class Espectaculo {
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
 	}
-
+	*/
 
 	public String getFotoEspectaculo() {
 		return fotoEspectaculo;

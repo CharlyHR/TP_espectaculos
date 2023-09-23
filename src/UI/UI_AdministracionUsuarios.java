@@ -130,6 +130,9 @@ public class UI_AdministracionUsuarios extends JFrame {
 			
             }
         });
+        
+        // ===== Boton Modificar Usuario ==============
+        
         btnAgregarUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
         btnAgregarUsuario.setBounds(488, 242, 96, 34);
         contentPane.add(btnAgregarUsuario);
@@ -137,7 +140,6 @@ public class UI_AdministracionUsuarios extends JFrame {
         btnModificarUsuario = new JButton("Modificar");
         btnModificarUsuario.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Código para modificar aquí
             	int fila = table.getSelectedRow();
             	// Dentro del actionPerformed del botón de modificación
             	if (fila >= 0) {

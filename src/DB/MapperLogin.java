@@ -19,7 +19,7 @@ public class MapperLogin {
 		 
 		//valido que el usuario exista
 		
-		String sql = "SELECT dni, nombre, apellido, email, nombre_usuario, password, tipo FROM usuario WHERE nombre_usuario = '" + usr.getNombreUsuario() + "'";
+		String sql = "SELECT DNI, Nombre, Apellido, Email, NombreUsuario, Password, Tipo FROM usuario WHERE NombreUsuario = '" + usr.getNombreUsuario() + "'";
 		
 		try {
 			ps = con.prepareStatement(sql);

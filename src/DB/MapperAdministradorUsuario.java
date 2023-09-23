@@ -20,7 +20,7 @@ public class MapperAdministradorUsuario {
 	        Connection con = null;
 	        con = Conexion.getConection();
 	        Statement s = con.createStatement();
-	        String sql = "INSERT INTO usuario (dni, nombre, apellido, email, nombre_usuario, password, tipo ) "
+	        String sql = "INSERT INTO usuario (DNI, Nombre, Apellido, Email, NombreUsuario, Password, Tipo ) "
 	                + "VALUES ('" + dni + "', '" + nombre + "', '" + apellido + "', '" + email + "', '" + nombreUsuario + "','" + password + "','" + tipo + "')";
 	        s.executeUpdate(sql);
 	        con.close();
@@ -39,7 +39,7 @@ public class MapperAdministradorUsuario {
 			Connection con = null;
 			con = Conexion.getConection();
 			Statement s = con.createStatement();
-			String sql = "DELETE FROM usuario WHERE dni = '" + dniUsuario + "'";
+			String sql = "DELETE FROM usuario WHERE DNI = '" + dniUsuario + "'";
 			s.executeUpdate(sql);
 			con.close(); 
 		}catch (Exception e1) {
@@ -85,7 +85,7 @@ public class MapperAdministradorUsuario {
 
         try {
             Connection con = Conexion.getConection();
-            String sql = "SELECT dni, nombre, apellido, email, nombre_usuario, tipo FROM usuario";
+            String sql = "SELECT DNI, Nombre, Apellido, Email, NombreUsuario, Password, Tipo FROM usuario";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData rsMd = rs.getMetaData();
@@ -103,12 +103,13 @@ public class MapperAdministradorUsuario {
                 modelo.addRow(fila);
 
                 Usuario usuario = new Usuario();
-                usuario.setDni(Integer.parseInt(rs.getString("dni")));
-                usuario.setNombre(rs.getString("nombre"));
-                usuario.setApellido(rs.getString("apellido"));
-                usuario.setEmail(rs.getString("email"));
-                usuario.setNombreUsuario(rs.getString("nombre_usuario"));
-                usuario.setTipo(Integer.parseInt(rs.getString("tipo")));
+                usuario.setDni(Integer.parseInt(rs.getString("DNI")));
+                usuario.setNombre(rs.getString("Nombre"));
+                usuario.setApellido(rs.getString("Apellido"));
+                usuario.setEmail(rs.getString("Email"));
+                usuario.setNombreUsuario(rs.getString("NombreUsuario"));
+                usuario.setPassword(rs.getString("Password"));
+                usuario.setTipo(Integer.parseInt(rs.getString("Tipo")));
                 usuarios.add(usuario);
             }
 
@@ -124,9 +125,9 @@ public class MapperAdministradorUsuario {
 	    try {
 	        Connection con = Conexion.getConection();
 	        Statement s = con.createStatement();
-	        String sql = "UPDATE usuario SET nombre = '" + nuevo_nombre + "', apellido = '" + nuevo_apellido +
-	                "', email = '" + nuevo_email + "', nombre_usuario = '" + nuevo_nombre_usr +
-	                "', password = '" + nueva_pass + "', tipo = '" + nuevo_tipo + "' WHERE dni = '" + dni + "'";
+	        String sql = "UPDATE usuario SET Nombre = '" + nuevo_nombre + "', Apellido = '" + nuevo_apellido +
+	                "', Email = '" + nuevo_email + "', NombreUsuario = '" + nuevo_nombre_usr +
+	                "', Password = '" + nueva_pass + "', Tipo = '" + nuevo_tipo + "' WHERE DNI = '" + dni + "'";
 	        s.executeUpdate(sql);
 	        con.close();
 	    } catch (Exception e1) {

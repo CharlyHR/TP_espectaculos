@@ -14,15 +14,15 @@ import BLL.Espectaculo;
 
 public class MapperAdministradorEspectaculo {
 
-	public void mapperCrearEspectaculo(int id_espectaculo, String nombre, String fecha, int precio, String foto, int capacidadTotal, int capacidadRestante) {
+	public void mapperCrearEspectaculo(int id_espectaculo, String nombre, String fecha, String foto) {
 		
 		try {
 			Connection con = null;
 			con = Conexion.getConection();
 			
 			Statement s = con.createStatement();
-            String sql = "INSERT INTO espectaculo (id_espectaculo, nombre, fecha, precio, foto, capacidad_total, capacidad_restante ) "
-					+ "				VALUES ('" + id_espectaculo + "', '" + nombre + "', '" + fecha + "', '" + precio + "', '" + foto + "','" + capacidadTotal + "','" + capacidadRestante + "')";
+            String sql = "INSERT INTO espectaculo (idEspectaculo, Nombre, Fecha, foto ) "
+					+ "				VALUES ('" + id_espectaculo + "', '" + nombre + "', '" + fecha + "', '" + foto + "')";
             s.executeUpdate(sql);
 			
 			con.close(); // la cerre aca por que no me dejaba cerrarla en el finally, no se por que
@@ -41,7 +41,7 @@ public class MapperAdministradorEspectaculo {
 	        Connection con = null;
 	        con = Conexion.getConection();
 	        Statement s = con.createStatement();
-	        String sql = "SELECT capacidad_restante FROM espectaculo WHERE id_espectaculo = '" + idEspectaculo + "'";
+	        String sql = "SELECT capacidad_restante FROM espectaculo WHERE idEspectaculo = '" + idEspectaculo + "'";
 	        ResultSet rs = s.executeQuery(sql);
 
 	        // Verificar si hay al menos una fila en el resultado
@@ -62,7 +62,7 @@ public class MapperAdministradorEspectaculo {
 	    }
 	}
 	
-	public void mapperModificarEspectaculo(int idEspectaculo, String nombre, String fecha, int precio, String foto, int capacidadTotal, int capacidadRestante) {
+	public void mapperModificarEspectaculo(int idEspectaculo, String nombre, String fecha, String foto) {
 		
 		// Valores hardcodeados para probar, despues seran ingresados desde la UI
 		/*String nuevo_nombre = "Show de malabares";
@@ -76,7 +76,7 @@ public class MapperAdministradorEspectaculo {
 			Connection con = null;
 			con = Conexion.getConection();
 			Statement s = con.createStatement();
-			String sql = "UPDATE espectaculo set nombre = '" + nombre + "', fecha = '" + fecha + "',precio = '" + precio + "', foto = '" + foto + "', capacidad_total = '" + capacidadTotal + "', capacidad_restante = '" + capacidadRestante +"' WHERE id_espectaculo = '" + idEspectaculo + "'";
+			String sql = "UPDATE espectaculo set Nombre = '" + nombre + "', Fecha = '" + fecha + "', foto = '" + foto + "' WHERE idEspectaculo = '" + idEspectaculo + "'";
 			s.executeUpdate(sql);
 			con.close(); 
 		}catch (Exception e1) {
@@ -93,7 +93,7 @@ public class MapperAdministradorEspectaculo {
 			Connection con = null;
 			con = Conexion.getConection();
 			Statement s = con.createStatement();
-			String sql = "DELETE FROM espectaculo WHERE id_espectaculo = '" + idEspectaculo + "'";
+			String sql = "DELETE FROM espectaculo WHERE idEspectaculo = '" + idEspectaculo + "'";
 			s.executeUpdate(sql);
 			con.close(); 
 		}catch (Exception e1) {
@@ -111,7 +111,7 @@ public class MapperAdministradorEspectaculo {
 
         try {
             Connection con = Conexion.getConection();
-            String sql = "SELECT id_espectaculo, nombre, fecha, precio, foto, capacidad_total, capacidad_restante FROM espectaculo";
+            String sql = "SELECT idEspectaculo, Nombre, Fecha, Foto FROM espectaculo";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData rsMd = rs.getMetaData();
@@ -133,10 +133,10 @@ public class MapperAdministradorEspectaculo {
                 espectaculo.setId_espectaculo(Integer.parseInt(rs.getString("id_espectaculo")));
                 espectaculo.setNombre(rs.getString("nombre"));
                 espectaculo.setFecha(rs.getString("fecha"));
-                espectaculo.setPrecio(Integer.parseInt(rs.getString("precio")));
+                //espectaculo.setPrecio(Integer.parseInt(rs.getString("precio")));
                 espectaculo.setFotoEspectaculo(rs.getString("foto"));
-                espectaculo.setCapacidadTotal(Integer.parseInt(rs.getString("capacidad_total")));
-                espectaculo.setCapacidadRestante(Integer.parseInt(rs.getString("capacidad_restante")));
+                //espectaculo.setCapacidadTotal(Integer.parseInt(rs.getString("capacidad_total")));
+                //espectaculo.setCapacidadRestante(Integer.parseInt(rs.getString("capacidad_restante")));
                 espectaculos.add(espectaculo);
             }
 
